@@ -53,8 +53,4 @@ export class SignUpPage {
         const message = this.page.locator('text= Warning: E-Mail Address is already registered!'); 
         await expect(message).toBeVisible();
     }
-
-
-
-   
 }
