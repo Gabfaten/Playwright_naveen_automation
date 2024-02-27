@@ -10,7 +10,7 @@ const test = base.extend<{ search: SearchResultPage }>({
     },
   });
 test.describe("Test Search Product by name",() => {  
-    test("Search the product by name and product should be displayed", async ({ search,page },testInfo) => { 
+    test("Search the product by name and product should be displayed @Smoke", async ({ search,page },testInfo) => { 
    
         let myobject :any = new Promise((resolve)=>{
             let dataArray:JSON[] =[];

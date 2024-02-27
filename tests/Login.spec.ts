@@ -12,7 +12,7 @@ import { writeToPath } from 'fast-csv';
       });
    
 test.describe("Test Login  through naveenautomationlabs",() => {   
-    test("Should be able to login  using valid credentials", async ({ login, page},testInfo) => { 
+    test("Should be able to login  using valid credentials @Smoke", async ({ login, page},testInfo) => { 
                
         let myobject :any = new Promise((resolve)=>{
             let dataArray:JSON[] =[];
@@ -41,7 +41,7 @@ test.describe("Test Login  through naveenautomationlabs",() => {
         });
     })
 
-    test("Should not be able to login  using incorrect credentials", async ({ login,page },testInfo) => { 
+    test("Should not be able to login  using incorrect credentials @Smoke", async ({ login,page },testInfo) => { 
         const user_email= 'test@yahoo.fr'
         const invalid_passwd= '12356'
         await login.Login(user_email,invalid_passwd);    
@@ -51,7 +51,7 @@ test.describe("Test Login  through naveenautomationlabs",() => {
            path: `screenshots/${testInfo.title.replace(" ","_")}.png` 
        });
     })
-    test("Should be able to logout", async ({ login,page },testInfo) => { 
+    test("Should be able to logout @Smoke", async ({ login,page },testInfo) => { 
         const user_email= 'gabFat@gmail.com'
         const user_passwd= '1234'
         await login.Login(user_email,user_passwd);    
@@ -62,7 +62,7 @@ test.describe("Test Login  through naveenautomationlabs",() => {
         });
         await login.Logout();       
     })
-    test("Should be able to have a password reset link by e-mail ", async ({ login,page },testInfo) => { 
+    test("Should be able to have a password reset link by e-mail @Smoke", async ({ login,page },testInfo) => { 
         const user_email= 'gabFat@gmail.com'
         await login.checkforgotPswdLink();
         await login.getForgotPwdPageUrl();
@@ -74,7 +74,7 @@ test.describe("Test Login  through naveenautomationlabs",() => {
         });  
     })
 
-    test("Should not be able to have a password reset link when enter invalid email", async ({ login,page },testInfo) => {
+    test("Should not be able to have a password reset link when enter invalid email @Smoke", async ({ login,page },testInfo) => {
         const invalid_email= 'gabouch.fr'
         await login.checkforgotPswdLink();
         await login.getForgotPwdPageUrl();
@@ -85,7 +85,7 @@ test.describe("Test Login  through naveenautomationlabs",() => {
             path: `screenshots/${testInfo.title.replace(" ","_")}.png` 
         });  
     })
-    test("Should not be able to change password ", async ({ login,page },testInfo) => { 
+    test("Should not be able to change password @Smoke", async ({ login,page },testInfo) => { 
                 
         let myobject :any = new Promise((resolve)=>{
             let dataArray:JSON[] =[];
@@ -114,7 +114,7 @@ test.describe("Test Login  through naveenautomationlabs",() => {
         }); 
     })
 
-    test("Should be able to change password ", async ({ login,page }, testInfo) => {                
+    test("Should be able to change password @Smoke", async ({ login,page }, testInfo) => {                
         let myobject :any = new Promise((resolve)=>{
             let dataArray:JSON[] =[];
             csv
@@ -144,7 +144,7 @@ test.describe("Test Login  through naveenautomationlabs",() => {
          });  
 
     })
-    test("Should not be able to login when Your account has exceeded allowed number of login attempts ",
+    test("Should not be able to login when Your account has exceeded allowed number of login attempts",
      async ({ login,page }, testInfo) => {     
         const email= 'gabouch_faten@hotmail.fr'
         const passwd= '123456'
