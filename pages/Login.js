@@ -91,7 +91,6 @@ export class LoginPage {
         const errorMessageText = await this.page.textContent(errorMessageSelector);
         await expect(errorMessageText)
         .toContain('Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.');
-
     }
    
 }
