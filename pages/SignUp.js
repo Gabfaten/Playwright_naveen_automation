@@ -33,8 +33,7 @@ export class SignUpPage {
         await this.pswd_textbox.fill(pswd)
         await this.Confirm_textbox.fill(confirm)
         await this.agreeCheckbox.check();
-        await this.ContinueBtn.click();      
-       
+        await this.ContinueBtn.click();  
     }
     async VerifyAccountSuccess(){ 
         const title = this.page.locator('text=Your Account Has Been Created!'); 
