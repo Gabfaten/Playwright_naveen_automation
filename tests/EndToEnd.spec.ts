@@ -38,7 +38,6 @@ const test = base.extend<{ orderpage: OrderPage , addTocart: AddToCartPage }>({
          })
       })
       let output=await myobject;  
-
       await page.goto("https://naveenautomationlabs.com/opencart/index.php?route=common/home");
       await addTocart.ClickOnAddToCart(); 
       await page.waitForTimeout(3000)      
