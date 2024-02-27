@@ -48,6 +48,7 @@ export class SignUpPage {
       const logout= this.page.locator('ul.dropdown-menu > li:nth-child(5) > a')
       await expect(logout).toBeVisible(); 
     }
+    
     async VerifyError(){ 
         const message = this.page.locator('text= Warning: E-Mail Address is already registered!'); 
         await expect(message).toBeVisible();
