@@ -18,7 +18,7 @@ const test = base.extend<{ orderpage: OrderPage , addTocart: AddToCartPage }>({
     test.use({
         storageState:'AuthorAuth.json'
    });  
-
+   
     test.beforeEach('@regression',async({ page }) => {
         await page.setDefaultNavigationTimeout(60000);        
         await page.goto("https://naveenautomationlabs.com/opencart/index.php?route=account/login"); 
