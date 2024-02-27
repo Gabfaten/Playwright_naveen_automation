@@ -42,13 +42,14 @@ export class SignUpPage {
     async ClickOnContinue(){
         await this.ContinueBtnTwo.click(); 
     }
+    
     async VerifyLogoutLink(){
       //logout link 
       await this.page.locator('//*[@id="top-links"]/ul/li[2]/a/span[1]').click();
       const logout= this.page.locator('ul.dropdown-menu > li:nth-child(5) > a')
       await expect(logout).toBeVisible(); 
     }
-    
+
     async VerifyError(){ 
         const message = this.page.locator('text= Warning: E-Mail Address is already registered!'); 
         await expect(message).toBeVisible();
