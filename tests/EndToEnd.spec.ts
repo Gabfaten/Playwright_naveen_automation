@@ -19,12 +19,12 @@ const test = base.extend<{ orderpage: OrderPage , addTocart: AddToCartPage }>({
         storageState:'AuthorAuth.json'
    });  
 
-    test.beforeEach(async({ page }) => {
+    test.beforeEach('@regression',async({ page }) => {
         await page.setDefaultNavigationTimeout(60000);        
         await page.goto("https://naveenautomationlabs.com/opencart/index.php?route=account/login"); 
         //login steps in global-config 
     });
-    test.skip("Order confirmation should  be done successfuly", async ({ addTocart, orderpage, page},testInfo) => { 
+    test.skip("Order confirmation should  be done successfuly @regression", async ({ addTocart, orderpage, page},testInfo) => { 
                 
       let myobject :any = new Promise((resolve)=>{
         let dataArray:JSON[] =[];
