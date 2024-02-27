@@ -42,6 +42,7 @@ export class SignUpPage {
     async ClickOnContinue(){
         await this.ContinueBtnTwo.click(); 
     }
+    
     async VerifyLogoutLink(){
       //logout link 
       await this.page.locator('//*[@id="top-links"]/ul/li[2]/a/span[1]').click();
